@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css" >
     <link rel="stylesheet" href="css/main.css" >
     <link rel="stylesheet" href="css/gallery.css" >
+    <link rel="stylesheet" href="css/bootstrap-anchor.min.css" >
+
     <script type="text/javascript" src="js/deep-minimized.js"></script>
+    <script type="text/javascript" src="js/jssor.slider-27.1.0.min.js"></script>
   </head>
   <body>
     <div class="modal fade" id="modalPayment" tabindex="-1" role="dialog" aria-labelledby="modalPaymentLabel" aria-hidden="true">
@@ -17,11 +20,8 @@
         <div class="modal-content">
           <div class="modal-header">
             <div style="width: 100%" class="row align-items-center">
-              <div class="col-xl-5">
-                <h5 class="modal-title" id="modalPayment">ВЫБЕРИТЕ <br/>СПОСОБ ОПЛАТЫ </h5>
-              </div>
-              <div class="col-xl-3">
-                <img src="img/next.png" alt="">
+              <div class="col-xl-8">
+                <h5 class="modal-title" id="modalPayment">ВЫБЕРИТЕ <br/>СПОСОБ ОПЛАТЫ <img style="width:48px;height:15px;" src="img/next.png" alt=""></h5>
               </div>
               <div style="text-align: right" class="col-xl-2">
                 <img src="img/che.png" alt="">
@@ -30,12 +30,12 @@
           </div>
           <div class="modal-body">
             <div class="custom-control item custom-radio">
-              <input type="radio" class="custom-control-input" id="cardPayment"  name="radio-stacked">
+              <input onclick="paymentType(1)" type="radio" class="custom-control-input" id="cardPayment"  name="radio-stacked">
               <label class="custom-control-label" for="cardPayment">БАНКОВСКАЯ КАРТА</label>
             </div>
             <hr class="paymentHr"/>
             <div style="clear: both" class="custom-control item custom-radio">
-              <input type="radio" class="custom-control-input" id="cashPayment" name="radio-stacked">
+              <input onclick="paymentType(2)" type="radio" class="custom-control-input" id="cashPayment" name="radio-stacked">
               <label class="custom-control-label" for="cashPayment">НАЛИЧНЫМИ КУРЬЕРУ</label>
             </div>
           </div>
@@ -47,11 +47,8 @@
         <div class="modal-content">
           <div class="modal-header">
             <div style="width: 100%" class="row align-items-center">
-              <div class="col-xl-6">
-                <h5 class="modal-title" id="changeShop">ВЫБЕРИТЕ <br/> ВАШ ЛЮБИМЫЙ ЧЕЧИЛ</h5>
-              </div>
-              <div class="col-xl-2">
-                <img src="img/next.png" alt="">
+              <div class="col-xl-8">
+                <h5 class="modal-title" id="changeShop">ВЫБЕРИТЕ <br/>ВАШ ЛЮБИМЫЙ ЧЕЧИЛ <img style="width:48px;height:15px;" src="img/next.png" alt=""></h5>
               </div>
               <div style="text-align: right" class="col-xl-1">
                 <img src="img/che.png" alt="">
@@ -60,38 +57,36 @@
           </div>
           <div class="modal-body">
             <div class="custom-control item custom-radio">
-              <input type="radio" class="custom-control-input" id="saryArka"  name="radio-stacked">
-              <label class="custom-control-label" for="saryArka">МЕНЮ САРЫ-АРКА</label>
+              <input type="hidden" id="urlShop"/>
+              <input onclick="changeShop(1)" type="radio" class="custom-control-input" id="saryArka"  name="radio-stacked">
+              <label class="custom-control-label" for="saryArka">САРЫ-АРКА</label>
             </div>
             <hr class="paymentHr"/>
             <div style="clear: both" class="custom-control item custom-radio">
-              <input type="radio" class="custom-control-input" id="rozibakieva" name="radio-stacked">
-              <label class="custom-control-label" for="rozibakieva">МЕНЮ РОЗЫБАКИЕВА</label>
+              <input onclick="changeShop(2)" type="radio" class="custom-control-input" id="rozibakieva" name="radio-stacked">
+              <label class="custom-control-label" for="rozibakieva">РОЗЫБАКИЕВА</label>
             </div>
             <hr class="paymentHr"/>
             <div style="clear: both" class="custom-control item custom-radio">
-              <input type="radio" class="custom-control-input" id="jarokova" name="radio-stacked">
-              <label class="custom-control-label" for="jarokova">МЕНЮ ЖАРОКОВА</label>
+              <input onclick="changeShop(3)" type="radio" class="custom-control-input" id="jarokova" name="radio-stacked">
+              <label class="custom-control-label" for="jarokova">ЖАРОКОВА</label>
             </div>
             <hr class="paymentHr"/>
             <div style="clear: both" class="custom-control item custom-radio">
-              <input type="radio" class="custom-control-input" id="tolebaeva" name="radio-stacked">
-              <label class="custom-control-label" for="tolebaeva">МЕНЮ ТУЛЕБАЕВА</label>
+              <input onclick="changeShop(4)" type="radio" class="custom-control-input" id="tolebaeva" name="radio-stacked">
+              <label class="custom-control-label" for="tolebaeva">ТУЛЕБАЕВА</label>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="modal fade" id="warning" tabindex="-1" role="dialog" aria-labelledby="warningLabel" aria-hidden="true">
+    <div class="modal fade" id="changeMenu" tabindex="-1" role="dialog" aria-labelledby="changeMenuLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <div style="width: 100%" class="row align-items-center">
-              <div class="col-xl-6">
-                <h5 class="modal-title" id="warning">ЧЕ ПРЕДУПРЕЖДАЕТ!</h5>
-              </div>
-              <div class="col-xl-2">
-                <img src="img/next.png" alt="">
+              <div class="col-xl-8">
+                <h5 class="modal-title" id="changeMenu">ВЫБЕРИТЕ <br/>ВАШ ЛЮБИМЫЙ ЧЕЧИЛ <img style="width:48px;height:15px;" src="img/next.png" alt=""></h5>
               </div>
               <div style="text-align: right" class="col-xl-1">
                 <img src="img/che.png" alt="">
@@ -99,18 +94,24 @@
             </div>
           </div>
           <div class="modal-body">
-            <h5>
-              Покидая эту страницу,<br />
-              ваша корзина обнулится :(
-            </h5>
-            <br/>
-            <div class="row">
-              <div class="col-xl-3">
-                <button style="width: 100%" type="button" class="btn btn-outline-warning">Ok</button>
-              </div>
-              <div class="col-xl-3">
-                <button style="width: 100%" type="button" class="btn btn-outline-dark">Отмена</button>
-              </div>
+            <div class="custom-control item custom-radio">
+              <input onclick="changeMenuLink(1)" type="radio" class="custom-control-input" id="menuSaryArka"  name="radio-menu">
+              <label class="custom-control-label" for="menuSaryArka">МЕНЮ САРЫ-АРКА</label>
+            </div>
+            <hr class="paymentHr"/>
+            <div style="clear: both" class="custom-control item custom-radio">
+              <input onclick="changeMenuLink(2)" type="radio" class="custom-control-input" id="menuRozibakieva" name="radio-menu">
+              <label class="custom-control-label" for="menuRozibakieva">МЕНЮ РОЗЫБАКИЕВА</label>
+            </div>
+            <hr class="paymentHr"/>
+            <div style="clear: both" class="custom-control item custom-radio">
+              <input onclick="changeMenuLink(3)" type="radio" class="custom-control-input" id="menuJarokova" name="radio-menu">
+              <label class="custom-control-label" for="menuJarokova">МЕНЮ ЖАРОКОВА</label>
+            </div>
+            <hr class="paymentHr"/>
+            <div style="clear: both" class="custom-control item custom-radio">
+              <input onclick="changeMenuLink(4)" type="radio" class="custom-control-input" id="menuTolebaeva" name="radio-menu">
+              <label class="custom-control-label" for="menuTolebaeva">МЕНЮ ТУЛЕБАЕВА</label>
             </div>
           </div>
         </div>
@@ -119,84 +120,117 @@
     <div  class="modal fade bd-example-modal-lg" id="galleryModal" tabindex="-1" role="dialog" aria-labelledby="galleryModal" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
-          <div class="modal-header">
-            <div style="width: 100%" class="row align-items-center">
-              <div class="col-xl-8">
-                <h5 class="modal-title" id="warning">ЧЕЧИЛ  ДАНА! <img src="img/next.png" alt=""></h5>
-              </div>
-              <div style="text-align: right" class="col-xl-1">
-                <img src="img/che.png" alt="">
-              </div>
-            </div>
-          </div>
           <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:480px;overflow:hidden;visibility:hidden;">
-                 <!-- Loading Screen -->
-                 <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-                    <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/slider/spin.svg" />
-                 </div>
-                 <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
-                    <div data-p="170.00">
-                       <img data-u="image" src="img/slider/031.jpg" />
-                       <img data-u="thumb" src="img/slider/031-s190x90.jpg" />
-                    </div>
-                    <div data-p="170.00">
-                       <img data-u="image" src="img/slider/032.jpg" />
-                       <img data-u="thumb" src="img/slider/032-s190x90.jpg" />
-                    </div>
-                    <div data-p="170.00">
-                       <img data-u="image" src="img/slider/033.jpg" />
-                       <img data-u="thumb" src="img/slider/033-s190x90.jpg" />
-                    </div>
-                    <div data-p="170.00">
-                       <img data-u="image" src="img/slider/034.jpg" />
-                       <img data-u="thumb" src="img/slider/034-s190x90.jpg" />
-                    </div>
-                    <div data-p="170.00">
-                       <img data-u="image" src="img/slider/035.jpg" />
-                       <img data-u="thumb" src="img/slider/035-s190x90.jpg" />
-                    </div>
-                    <div data-p="170.00">
-                       <img data-u="image" src="img/slider/036.jpg" />
-                       <img data-u="thumb" src="img/slider/036-s190x90.jpg" />
-                    </div>
-                    <div data-p="170.00">
-                       <img data-u="image" src="img/slider/037.jpg" />
-                       <img data-u="thumb" src="img/slider/037-s190x90.jpg" />
-                    </div>
-                    <div data-p="170.00">
-                       <img data-u="image" src="img/slider/038.jpg" />
-                       <img data-u="thumb" src="img/slider/038-s190x90.jpg" />
-                    </div>
-                    <div data-p="170.00">
-                       <img data-u="image" src="img/slider/039.jpg" />
-                       <img data-u="thumb" src="img/slider/039-s190x90.jpg" />
-                    </div>
-                    <div data-p="170.00">
-                       <img data-u="image" src="img/slider/040.jpg" />
-                       <img data-u="thumb" src="img/slider/040-s190x90.jpg" />
-                    </div>
-                 </div>
-                 <!-- Thumbnail Navigator -->
-                 <div data-u="thumbnavigator" class="jssort101" style="position:absolute;left:0px;bottom:0px;width:980px;height:100px;background-color:#000;" data-autocenter="1" data-scale-bottom="0.75">
-                    <div data-u="slides">
-                       <div data-u="prototype" class="p" style="width:190px;height:90px;">
-                          <div data-u="thumbnailtemplate" class="t"></div>
-                          <svg viewbox="0 0 16000 16000" class="cv">
-                             <circle class="a" cx="8000" cy="8000" r="3238.1"></circle>
-                             <line class="a" x1="6190.5" y1="8000" x2="9809.5" y2="8000"></line>
-                             <line class="a" x1="8000" y1="9809.5" x2="8000" y2="6190.5"></line>
-                          </svg>
-                       </div>
-                    </div>
-                 </div>
-                 <!-- Arrow Navigator -->
-                 <div data-u="arrowleft" class="jssora106" style="width:55px;height:55px;top:162px;left:30px;" data-scale="0.75">
-                    <img src="img/slider-white-left.png" alt="">
-                 </div>
-                 <div data-u="arrowright" class="jssora106" style="width:55px;height:55px;top:162px;right:30px;" data-scale="0.75">
-                    <img src="img/slider-white-right.png" alt="">
-                 </div>
+              <!-- Loading Screen -->
+              <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                  <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/slider/spin.svg" />
               </div>
+              <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+                  <div data-p="170.00">
+                      <img data-u="image" src="img/slider/022.jpg" />
+                      <div data-u="thumb">
+                          <img data-u="thumb" src="img/slider/022-s200x100.jpg" />
+                          <div class="ti">Che gallery</div>
+                      </div>
+                  </div>
+                  <div data-p="170.00">
+                      <img data-u="image" src="img/slider/023.jpg" />
+                      <div data-u="thumb">
+                          <img data-u="thumb" src="img/slider/023-s200x100.jpg" />
+                          <div class="ti">Che gallery</div>
+                      </div>
+                  </div>
+                  <div data-p="170.00">
+                      <img data-u="image" src="img/slider/024.jpg" />
+                      <div data-u="thumb">
+                          <img data-u="thumb" src="img/slider/024-s200x100.jpg" />
+                          <div class="ti">Che gallery</div>
+                      </div>
+                  </div>
+                  <div data-p="170.00">
+                      <img data-u="image" src="img/slider/025.jpg" />
+                      <div data-u="thumb">
+                          <img data-u="thumb" src="img/slider/025-s200x100.jpg" />
+                          <div class="ti">Che gallery</div>
+                      </div>
+                  </div>
+                  <div data-p="170.00">
+                      <img data-u="image" src="img/slider/026.jpg" />
+                      <div data-u="thumb">
+                          <img data-u="thumb" src="img/slider/026-s200x100.jpg" />
+                          <div class="ti">Che gallery</div>
+                      </div>
+                  </div>
+                  <div data-p="170.00">
+                      <img data-u="image" src="img/slider/027.jpg" />
+                      <div data-u="thumb">
+                          <img data-u="thumb" src="img/slider/027-s200x100.jpg" />
+                          <div class="ti">Che gallery</div>
+                      </div>
+                  </div>
+                  <div data-p="170.00">
+                      <img data-u="image" src="img/slider/021.jpg" />
+                      <div data-u="thumb">
+                          <img data-u="thumb" src="img/slider/021-s200x100.jpg" />
+                          <div class="ti">Che gallery</div>
+                      </div>
+                  </div>
+                  <div data-p="170.00">
+                      <img data-u="image" src="img/slider/028.jpg" />
+                      <div data-u="thumb">
+                          <img data-u="thumb" src="img/slider/028-s200x100.jpg" />
+                          <div class="ti">Che gallery</div>
+                      </div>
+                  </div>
+                  <div data-p="170.00">
+                      <img data-u="image" src="img/slider/029.jpg" />
+                      <div data-u="thumb">
+                          <img data-u="thumb" src="img/slider/029-s200x100.jpg" />
+                          <div class="ti">Che gallery</div>
+                      </div>
+                  </div>
+                  <div data-p="170.00">
+                      <img data-u="image" src="img/slider/030.jpg" />
+                      <div data-u="thumb">
+                          <img data-u="thumb" src="img/slider/030-s200x100.jpg" />
+                          <div class="ti">Che gallery</div>
+                      </div>
+                  </div>
+                  <div data-p="170.00">
+                      <img data-u="image" src="img/slider/031.jpg" />
+                      <div data-u="thumb">
+                          <img data-u="thumb" src="img/slider/031-s200x100.jpg" />
+                          <div class="ti">Che gallery</div>
+                      </div>
+                  </div>
+                  <div data-p="170.00">
+                      <img data-u="image" src="img/slider/032.jpg" />
+                      <div data-u="thumb">
+                          <img data-u="thumb" src="img/slider/032-s200x100.jpg" />
+                          <div class="ti">Che gallery</div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Thumbnail Navigator -->
+              <div data-u="thumbnavigator" class="jssort111" style="position:absolute;left:0px;bottom:0px;width:980px;height:100px;cursor:default;" data-autocenter="1" data-scale-bottom="0.75">
+                  <div data-u="slides">
+                      <div data-u="prototype" class="p">
+                          <div data-u="thumbnailtemplate" class="t"></div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Arrow Navigator -->
+              <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:162px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                  <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                      <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                  </svg>
+              </div>
+              <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:162px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                  <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                      <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                  </svg>
+              </div>
+          </div>
         </div>
       </div>
     </div>
@@ -209,10 +243,10 @@
           <a class="nav-link" href="#abaut">О CHE</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">МЕНЮ  ПАБА</a>
+          <a class="nav-link" data-toggle="modal" data-target="#changeMenu" href="javascript:;">МЕНЮ  ПАБА</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ДОСТАВКА</a>
+          <a class="nav-link" data-toggle="modal" data-target="#changeShop" href="javascript:;">ДОСТАВКА</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">БРОНЬ</a>
@@ -230,7 +264,7 @@
           <a class="nav-link" href="#contact">КОНТАКТЫ</a>
         </li>
         <li class="nav-item">
-          <img src="img/basket.png" alt="" />
+          <a href="contract.html"><img src="img/basket.png" alt="" /></a>
         </li>
         <li class="nav-item">
           <img src="img/star.png" alt="" />
@@ -271,7 +305,7 @@
                       <h4 style="text-align: left">ПОПУЛЯРНЫЕ <br /> БЛЮДА <img src="img/next.png" alt="next"></h4>
                     </div>
                     <div class="col align-self-end">
-                      <button type="button" class="btn btn-dark">СМОТРЕТЬ ВСЕ МЕНЮ</button>
+                      <button type="button" class="btn btn-dark"><img style="width:42px" src="img/next.png" alt="next">&nbsp&nbspСМОТРЕТЬ ВСЕ МЕНЮ</button>
                     </div>
                   </div>
                 </div>
@@ -434,15 +468,15 @@
       <div class="row order-shirts">
         <div class="col-xl-5">
           <h2 class="title-in">ДЛЯ ЗАКАЗА</h2>
-          <span>Напиши нам или позвани</span><p></p>
-          <h4>+7 777 152 54 78</h4>
+          <img src="img/letter-order.png" />
+          <h3>+7 777 152 54 78</h3>
         </div>
         <div style="text-align: right" class="col-xl-5">
           <img src="img/form-shirts.png" alt="">
         </div>
       </div>
     </div>
-    <br />
+    <br /><br />
     <div id="contact" class="container">
       <div class="row">
         <div class="col-xl-10">
@@ -454,50 +488,45 @@
         <div class="col-xl-6">
           <table class="contact-list" style="width: 100%;">
             <tr>
-              <td >САРЫ-АРКА</td>
-              <td  style="border: 1px solid #000">+7 747 277 01 33. +7 (727) 396 40 98</td>
-              <td><img src="img/fb-icon.png" alt="" /><img src="img/inst-icon.png" alt="" /></td>
+              <td class="row-name">САРЫ-АРКА</td>
+              <td class="row-phone" style="border: 1px solid #000">+7 747 277 01 33. +7 (727) 396 40 98</td>
+              <td class="row-social" style="text-align:center"><a><img src="img/fb-icon.png" alt="" /></a>&nbsp&nbsp<a><img src="img/inst-icon.png" alt="" /></a></td>
             </tr>
             <tr>
-              <td  style="border-bottom: 1px solid #000" colspan="3">г. Алматы, мкрн. 4, д. 24 Б, за кинотеатром, «Сары-Арка»</td>
-            </tr>
-          </table>
-          <br />
-          <table class="contact-list" style="width: 100%;">
-            <tr>
-              <td>САРЫ-АРКА</td>
-              <td  style="border: 1px solid #000">+7 747 277 01 33. +7 (727) 396 40 98</td>
-              <td><img src="img/fb-icon.png" alt="" /><img src="img/inst-icon.png" alt="" /></td>
-            </tr>
-            <tr>
-              <td  style="border-bottom: 1px solid #000" colspan="3">г. Алматы, мкрн. 4, д. 24 Б, за кинотеатром, «Сары-Арка»</td>
+              <td  class="row-address"  style="border-bottom: 1px solid #000" colspan="3">г. Алматы, мкрн. 4, д. 24 Б, за кинотеатром, «Сары-Арка»</td>
             </tr>
           </table>
           <br />
           <table class="contact-list" style="width: 100%;">
             <tr>
-              <td>САРЫ-АРКА</td>
-              <td  style="border: 1px solid #000">+7 747 277 01 33. +7 (727) 396 40 98</td>
-              <td><img src="img/fb-icon.png" alt="" /><img src="img/inst-icon.png" alt="" /></td>
+              <td class="row-name">РОЗЫБАКИЕВА</td>
+              <td class="row-phone" style="border: 1px solid #000">+7 747 277 01 33. +7 (727) 396 40 98</td>
+              <td class="row-social" style="text-align:center"><a><img src="img/fb-icon.png" alt="" /></a>&nbsp&nbsp<a><img src="img/inst-icon.png" alt="" /></a></td>
             </tr>
             <tr>
-              <td  style="border-bottom: 1px solid #000" colspan="3">г. Алматы, мкрн. 4, д. 24 Б, за кинотеатром, «Сары-Арка»</td>
+              <td class="row-address" style="border-bottom: 1px solid #000" colspan="3">г. Алматы, мкрн. 4, д. 24 Б, за кинотеатром, «Сары-Арка»</td>
             </tr>
           </table>
           <br />
           <table class="contact-list" style="width: 100%;">
             <tr>
-              <td>САРЫ-АРКА</td>
-              <td  style="border: 1px solid #000">+7 747 277 01 33. +7 (727) 396 40 98</td>
-              <td>
-                <ul class="social">
-                  <li><img src="img/fb-icon.png" alt="" /></li>
-                  <li><img src="img/inst-icon.png" alt="" /></li>
-                </ul>
-              </td>
+              <td class="row-name">ЖАРОКОВА</td>
+              <td class="row-phone" style="border: 1px solid #000">+7 747 277 01 33. +7 (727) 396 40 98</td>
+              <td class="row-social" style="text-align:center"><a><img src="img/fb-icon.png" alt="" /></a>&nbsp&nbsp<a><img src="img/inst-icon.png" alt="" /></a></td>
             </tr>
             <tr>
-              <td  style="border-bottom: 1px solid #000" colspan="3">г. Алматы, мкрн. 4, д. 24 Б, за кинотеатром, «Сары-Арка»</td>
+              <td class="row-address"   style="border-bottom: 1px solid #000" colspan="3">г. Алматы, мкрн. 4, д. 24 Б, за кинотеатром, «Сары-Арка»</td>
+            </tr>
+          </table>
+          <br />
+          <table class="contact-list" style="width: 100%;">
+            <tr>
+              <td class="row-name">ТУЛЕБАЕВА</td>
+              <td class="row-phone" style="border: 1px solid #000">+7 747 277 01 33. +7 (727) 396 40 98</td>
+              <td class="row-social" style="text-align:center"><a><img src="img/fb-icon.png" alt="" /></a>&nbsp&nbsp<a><img src="img/inst-icon.png" alt="" /></a></td>
+            </tr>
+            <tr>
+              <td class="row-address"   style="border-bottom: 1px solid #000" colspan="3">г. Алматы, мкрн. 4, д. 24 Б, за кинотеатром, «Сары-Арка»</td>
             </tr>
           </table>
         </div>
@@ -508,7 +537,7 @@
     </div>
     <hr />
     <div class="container">
-      <div class="row">
+      <div class="row footer align-items-center">
         <div class="col-xl-4">
           <img src="img/letter-footer.png" alt="" />
         </div>
@@ -522,5 +551,44 @@
     <script src="js/carousel.js"></script>
     <script src="js/modal.js"></script>
     <script type="text/javascript">jssor_1_slider_init();</script>
+    <script type="text/javascript">
+      $('.nav-link').click(function(){
+        var divId = $(this).attr('href');
+         $('html, body').animate({
+          scrollTop: $(divId).offset().top - 54
+        }, 100);
+      });
+      function paymentType(type){
+        if(type===1){
+          var url = $("#urlShop").val()
+          window.open(url, '_blank');
+        }else{
+          location.href='menu.html';
+        }
+      }
+      function changeShop(shop){
+        var url;
+        switch(shop) {
+            case 1:
+                url = 'https://zenge.kz/restaurants/104-chechil-pub-rozybakiyeva'
+                break;
+            case 2:
+                url = 'https://zenge.kz/restaurants/104-chechil-pub-rozybakiyeva'
+                break;
+            case 3:
+                url = 'https://zenge.kz/restaurants/134-chechil-pub-na-zharokova'
+                break;
+            default:
+                url = 'https://zenge.kz/restaurants/133-chechil-pub-na-tulebaeva'
+        }
+        $("#urlShop").val(url);
+        $('#changeShop').modal('hide')
+        $('#modalPayment').modal('show')
+      }
+      function changeMenuLink(){
+        $('#changeMenu').modal('hide')
+        window.open('img/menu.pdf', '_blank');
+      }
+    </script>
   </body>
 </html>

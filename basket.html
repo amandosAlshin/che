@@ -11,12 +11,12 @@
   </head>
   <body>
     <div class="container">
-        <ul class="nav nav-fill nav-pills align-items-center">
+      <ul class="nav nav-fill nav-pills align-items-center">
         <li class="nav-item">
           <img src="img/star.png" alt="" />
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">О CHE</a>
+          <a class="nav-link" href="#abaut">О CHE</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">МЕНЮ  ПАБА</a>
@@ -31,13 +31,13 @@
           <img src="img/logo.png" alt="" />
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ГАЛЕРЕЯ</a>
+          <a class="nav-link" href="#gallery">ГАЛЕРЕЯ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ФУТБОЛКИ</a>
+          <a class="nav-link" href="#shirts">ФУТБОЛКИ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">КОНТАКТЫ</a>
+          <a class="nav-link" href="#contact">КОНТАКТЫ</a>
         </li>
         <li class="nav-item">
           <img src="img/basket.png" alt="" />
@@ -47,11 +47,21 @@
         </li>
       </ul>
     </div>
+    <br />
+
     <div class="container">
+      <div class="row prev-link">
+        <a href="contract.html"><img src="img/prev-gray.png" alt=""></a>
+      </div>
       <div class="row">
-        <div class="col-xl-5">
-            <br /><br />
-            <h3 style="text-align: center" >КОРЗИНА</h3>
+        <div style="text-align: center" class="col-xl-5 page-basket-title">
+            <br />
+            <ul>
+              <li><img src="img/star-gray.png" alt=""></li>
+              <li><h2 style="text-align: center" >КОРЗИНА</h2></li>
+              <li><img src="img/star-gray.png" alt=""></li>
+            </ul>
+            <br />
             <div class="row basket-item align-items-center">
               <div class="col-xl-2">
                 <img src="img/basket-item.png" alt="" />
@@ -71,8 +81,8 @@
                   <div style="text-align: center" class="col-xl-1">
                     <img src="img/icon-delete.png" alt="">
                   </div>
-                  <div style="text-align: right" class="col-xl-4">
-                    3024 тг.
+                  <div class="col-xl-4 price">
+                    <span>3024 тг.</span>
                   </div>
                 </div>
               </div>
@@ -96,8 +106,8 @@
                   <div style="text-align: center" class="col-xl-1">
                     <img src="img/icon-delete.png" alt="">
                   </div>
-                  <div style="text-align: right" class="col-xl-4">
-                    3024 тг.
+                  <div class="col-xl-4 price">
+                    <span>3024 тг.</span>
                   </div>
                 </div>
               </div>
@@ -121,8 +131,8 @@
                   <div style="text-align: center" class="col-xl-1">
                     <img src="img/icon-delete.png" alt="">
                   </div>
-                  <div style="text-align: right" class="col-xl-4">
-                    3024 тг.
+                  <div class="col-xl-4 price">
+                    <span>3024 тг.</span>
                   </div>
                 </div>
               </div>
@@ -146,31 +156,73 @@
                   <div style="text-align: center" class="col-xl-1">
                     <img src="img/icon-delete.png" alt="">
                   </div>
-                  <div style="text-align: right" class="col-xl-4">
-                    3024 тг.
+                  <div class="col-xl-4 price">
+                    <span>3024 тг.</span>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="row basket-item align-items-center">
+              <div class="col-xl-2">
+                <img src="img/basket-item.png" alt="" />
+              </div>
+              <div class="col-xl-3">
+                <h4>МЯСНОЕ ЧИЛИ С ЧИПСАМИ</h4>
+              </div>
+              <div class="col-xl-5">
+                <div class="row">
+                  <div class="col-xl-4">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <button type="button" class="btn btn-outline-dark btn-sm">-</button>
+                      <button type="button" class="btn btn-outline-dark btn-sm">0</button>
+                      <button type="button" class="btn btn-outline-dark btn-sm">+</button>
+                    </div>
+                  </div>
+                  <div style="text-align: center" class="col-xl-1">
+                    <img src="img/icon-delete.png" alt="">
+                  </div>
+                  <div class="col-xl-4 price">
+                    <span>3024 тг.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row total align-items-center justify-content-end">
+              <div class="col-xl-5">
+                <table style="border: none;width: 85%">
+                  <tr style="border: none">
+                    <td style="border: none"><h6 style="vertical-align: middle; display: table-cell">К оплате:</h6></td>
+                    <td style="border: none"><h6><h5> 12 096 тг</h5</h6></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-10">
+                <a href="thank-you.html"style="width: 94%;text-align: right" role="button" class="btn btn-dark"><img style="width:42px" src="img/next.png" alt="next">&nbsp&nbsp&nbspОФОРМИТЬ ЗАКАЗ</a>
               </div>
             </div>
         </div>
-        <div class="col-xl-4">
+        <div class="col-xl-4 basket-description">
           <div class="row">
             <div class="col-xl-7">
-              <img src="img/basket-title.png" alt="">
+              <img style="margin-top: -22px" src="img/basket-title.png" alt="">
             </div>
             <div style="text-align: right" class="col-xl-3">
               <img src="img/pub.png" alt="">
             </div>
           </div>
-
+          <br />
           <h4>УСЛОВИЯ ДОСТАВКИ</h4>
-          <p class="description">
+          <p>
               Минимальная сумма заказа 2000 тг + бесплатная доставка.
               При заказе суши и роллов на каждые 2000 тг бесплатно
               прилагается: 1 порция соевого соуса, 1 порция имбиря, 1
               порция васаби. Количество ланч-боксов определяется
               объемом заказа. Принимаем заказы с 14:00-23:00.
           </p>
+          <br/>
           <h4>РАЙОНЫ ДОСТАВКИ</h4>
           <iframe src="https://www.google.com/maps/d/embed?mid=1DTbICqTMe8-f9mbUUtMOn037mZU&hl=ru" width="100%" height="280"></iframe>
         </div>
@@ -178,7 +230,7 @@
     </div>
     <hr />
     <div class="container">
-      <div class="row">
+      <div class="row footer align-items-center">
         <div class="col-xl-4">
           <img src="img/letter-footer.png" alt="" />
         </div>

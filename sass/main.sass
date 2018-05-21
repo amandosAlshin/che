@@ -3,6 +3,7 @@
 body
   background-color: white
   overflow-x: hidden
+  padding: 10px 0
 ul.nav
   li.nav-item
     a.nav-link
@@ -48,27 +49,52 @@ table,tr,td
   border-top: 1px solid black
 .order-shirts
   border-left: 10px solid #ececec
+  h3
+    font-family: MullerBold
+    color:  #050809
+    font-size: 39px
+    font-weight: 400
+    line-height: 33px
 table.contact-list td
   padding: 7px 8px
 .menu-category
+  a:hover
+    text-decoration: none
   border-radius: 0
   img
     padding: 8px
   h5
+    font-family: MullerBold
+    color:  #000102
     font-size: 14px
-    text-align: center
+    font-weight: 400
+    text-align: justify
+  .card-body
+    padding: 0
+  &:hover
+    cursor: pointer
 .menu-item
   border-radius: 0
   img
     padding: 8px
-  h5
-    font-size: 14px
+  h5.card-title
+    font-size: 16px
+    font-family: MullerBold
+    font-weight: 400
+    letter-spacing: 2px
+    line-height: 1
+    text-align: left
+
   span
-    font-size: 8px
+    font-size: 10px
     color: #817f7d
+    font-family: MullerRegular
+    line-height: 1.5
   p.description
     font-size: 12px
+    line-height: 14px
     display: none
+    font-family: MullerRegular
   &:hover
     cursor: pointer
     z-index: 2
@@ -86,7 +112,14 @@ table.contact-list td
       .col-md-6
         padding: 0
     .btn
+      width: 100%
       border-radius: 0
+    .col-md-6
+      .btn-group
+        display: flex
+        .btn
+          flex: 1
+
 .row.order
   input
     border-radius: 0
@@ -95,7 +128,7 @@ table.contact-list td
   .btn
     width: 100%
     border-radius: 0
-  .total
+  .total-order
     width: 100%
     height: auto
     .form-control
@@ -103,9 +136,35 @@ table.contact-list td
       width: 100%
       border-radius: 0
       background-color: #ececec
+    ul
+      margin: 0
+      padding: 15px 10px
+      li
+        list-style: none
+        font-family: Europe
+        color:  #060809
+        font-size: 14px
+        font-weight: 400
+        line-height: 1.5
+        text-align: left
+
 .basket-item
   h4
+    font-family: MullerBold
+    color:  #000102
     font-size: 12px
+    font-weight: 400
+    text-align: left
+    letter-spacing: 2px
+  .price
+    text-align: right
+    span
+        font-family: MullerBold
+        color:  #000102
+        font-size: 14px
+        font-weight: 400
+
+
 hr.paymentHr
   border: 1px dashed #e4e4e4
   width: 95%
@@ -113,12 +172,78 @@ hr.paymentHr
 #galleryModal.modal.show .modal-dialog
     .modal-content
       border-radius: 0
+#modalPayment
+  h5
+    font-family: MullerBold
+    color:  #050809
+    font-size: 22px
+    font-weight: 400
+    line-height: 33px
 #modalPayment .modal-body .item .custom-control-label
+
+  font-family: MullerMedium
+  color:  #afafb0
+  font-size: 14px
+  font-weight: 400
+  text-align: left
   &:hover
     cursor: pointer
+    color:  #151618
+
 #changeShop .modal-body .item .custom-control-label
+  font-family: MullerMedium
+  color:  #afafb0
+  font-size: 14px
+  font-weight: 400
+  text-align: left
   &:hover
     cursor: pointer
+    color:  #151618
+#changeShop
+  h5
+    font-family: MullerBold
+    color:  #050809
+    font-size: 22px
+    font-weight: 400
+    line-height: 33px
+#changeMenu .modal-body .item .custom-control-label
+  font-family: MullerMedium
+  color:  #afafb0
+  font-size: 14px
+  font-weight: 400
+  text-align: left
+  &:hover
+    cursor: pointer
+    color:  #151618
+#changeMenu
+  h5
+    font-family: MullerBold
+    color:  #050809
+    font-size: 22px
+    font-weight: 400
+    line-height: 33px
+#warning .modal-body .item .custom-control-label
+  font-family: MullerMedium
+  color:  #afafb0
+  font-size: 14px
+  font-weight: 400
+  text-align: left
+  &:hover
+    cursor: pointer
+    color:  #151618
+#warning
+  h5
+    font-family: MullerBold
+    color:  #050809
+    font-size: 22px
+    font-weight: 400
+    line-height: 33px
+  h6
+    font-family: Europe
+    color:  #151618
+    font-size: 24px
+    font-weight: 400
+    text-align: left
 .top-goods
   .carousel-caption
     right: 0
@@ -131,6 +256,9 @@ hr.paymentHr
         height: 100%
     .btn
       float: right
+.btn
+  border-radius: 0
+  font-family: MullerMedium
 p.lead
   font-family: Europe
   color:  #141515
@@ -176,6 +304,10 @@ h5
       font-family: MullerRegular
       padding-left: 8px
       color: #ffffff
+.course:hover
+  .placeholder
+      h5
+        display: none
 .course .course-img
 	position: relative
 	display: block
@@ -288,3 +420,140 @@ a.about-video
 	right: 0
 	bottom: 0
 	top: 0
+table.contact-list
+  table-layout: fixed
+  .row-name
+    width: 25%
+    font-family: MullerBold
+    color:  #141414
+    font-size: 12px
+    font-weight: 600
+    line-height: 1
+  .row-phone
+    width: 60%
+    text-align: center
+    font-family: Europe
+    color:  #141414
+    font-size: 16px
+    font-weight: 400
+  .row-social
+    width: 15%
+  .row-address
+    font-family: Europe
+    color:  #141414
+    font-size: 16px
+    font-weight: 400
+
+.footer
+  h4
+    font-family: MullerBold
+    font-size: 18px
+    font-weight: 400
+    text-align: justify
+.page-title
+  h2
+    font-family: MullerBold
+    color:  #000102
+    font-size: 30px
+    font-weight: 400
+  ul
+    display: inline-block
+    text-align: initial
+    li
+      float: left
+      margin-left: 25px
+      list-style: none
+      &:first-child
+        margin: 0
+        list-style: none
+.time-order
+  text-align: left
+  border: 1px solid #fdc900
+  padding: 5px
+  font-family: MullerBold
+  color:  #000102
+  font-size: 12px
+  font-weight: 400
+.page-basket-title
+  h2
+    font-family: MullerBold
+    color:  #000102
+    font-size: 30px
+    font-weight: 400
+  ul
+    display: inline-block
+    text-align: initial
+    li
+      float: left
+      margin-left: 25px
+      list-style: none
+      &:first-child
+        margin: 0
+        list-style: none
+.basket-description
+  h4
+    font-family: MullerBold
+    color:  #000102
+    font-size: 19px
+    font-weight: 400
+    text-align: justify
+  p
+    font-family: Europe
+    color:  #000102
+    font-size: 13px
+    font-weight: 400
+    line-height: 24px
+    text-align: justify
+.total
+  ul
+    display: inline-block
+    text-align: initial
+    li
+      float: left
+      margin-left: 25px
+      list-style: none
+      &:first-child
+        margin: 0
+        list-style: none
+  h6
+    font-family: MullerRegular
+    color:  #000102
+    font-size: 15px
+    font-weight: 400
+  h5
+    font-family: MullerBold
+    color:  #000102
+    font-size: 15px
+    font-weight: 400
+.prev-link
+  &:hover
+    cursor: pointer
+.thankYou
+  p
+    font-family: Europe
+    color:  #000000
+    font-size: 15px
+    font-weight: 400
+    line-height: 24px
+    text-align: center
+.contract
+  font-family: MullerRegular
+
+.modal.show .modal-dialog
+  .modal-header
+    border-bottom: 2px solid #FFC107
+  .modal-content
+      border-radius: 0
+      border: 2px solid #FFC107
+
+#warning.modal.show .modal-dialog
+  .modal-header
+    border-bottom: 1px solid rgb(127, 126, 124)
+  .modal-content
+      border-radius: 0
+      border: 1px solid rgb(127, 126, 124)
+input:checked
+  background-color: #FFC107
+
+html
+  scroll-behavior: smooth

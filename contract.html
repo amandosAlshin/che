@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>CHE</title>
-
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css" >
     <link rel="stylesheet" href="css/main.css" >
   </head>
   <body>
     <div class="container">
-        <ul class="nav nav-fill nav-pills align-items-center">
+      <ul class="nav nav-fill nav-pills align-items-center">
         <li class="nav-item">
           <img src="img/star.png" alt="" />
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">О CHE</a>
+          <a class="nav-link" href="#abaut">О CHE</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">МЕНЮ  ПАБА</a>
@@ -31,13 +30,13 @@
           <img src="img/logo.png" alt="" />
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ГАЛЕРЕЯ</a>
+          <a class="nav-link" href="#gallery">ГАЛЕРЕЯ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ФУТБОЛКИ</a>
+          <a class="nav-link" href="#shirts">ФУТБОЛКИ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">КОНТАКТЫ</a>
+          <a class="nav-link" href="#contact">КОНТАКТЫ</a>
         </li>
         <li class="nav-item">
           <img src="img/basket.png" alt="" />
@@ -47,15 +46,20 @@
         </li>
       </ul>
     </div>
-    <div class="container">
-      <div  class="row align-items-center">
+    <br />
+    <div class="container contract">
+        <div  class="row align-items-bottom page-title">
           <div class="col-xl-2">
             <img src="img/ordering.png" alt="">
           </div>
-          <div style="text-align: center" class="col-xl-6">
-            <h2>ОФОРМЛЕНИЕ  ЗАКАЗА</h2>
+          <div style="text-align: center" class="col-xl-6 col align-self-end">
+            <ul>
+              <li><img src="img/star-gray.png" alt=""></li>
+              <li><h2>ОФОРМЛЕНИЕ  ЗАКАЗА</h2></li>
+              <li><img src="img/star-gray.png" alt=""></li>
+            </ul>
           </div>
-          <div style="text-align: center" class="col-xl-2">
+          <div class="col-xl-2">
             <img src="img/pub.png" alt="">
           </div>
         </div>
@@ -88,8 +92,13 @@
           <div class="col-xl-5">
             <textarea placeholder="Комментарий к заказу" class="form-control" rows="5"></textarea>
           </div>
-          <div class="col-xl-5 total">
+          <div class="col-xl-5 total-order">
             <div class="form-control ">
+              <ul>
+                <li>Стоимость товаров: <b>12 096 тг</b></li>
+                <li>Стоимость доставки: <b>0 тг</b></li>
+                <li>Итого стоимость заказа: <b>12 096 тг</b></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -99,13 +108,13 @@
             <span>Поля, отмеченные *, обязательны для заполнения.</span>
           </div>
           <div class="col-xl-5">
-            <button type="button" class="btn btn-dark">ЗАКАЗАТЬ!</button>
+            <a href="basket.html" style="width: 100%;text-align: right" role="button" class="btn btn-dark"><img style="width:42px" src="img/next.png" alt="next">&nbsp&nbsp&nbspЗАКАЗАТЬ!&nbsp&nbsp&nbsp&nbsp</a>
           </div>
         </div>
     </div>
     <hr />
     <div class="container">
-      <div class="row">
+      <div class="row footer align-items-center">
         <div class="col-xl-4">
           <img src="img/letter-footer.png" alt="" />
         </div>
