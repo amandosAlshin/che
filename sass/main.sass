@@ -1,0 +1,290 @@
+@import "colors"
+@import "fonts"
+body
+  background-color: white
+  overflow-x: hidden
+ul.nav
+  li.nav-item
+    a.nav-link
+      font-family: MullerMedium
+      color:  #141515
+      font-size: 14px
+      text-transform: uppercase
+      font-weight: 400
+      text-align: left
+      display: inline-block
+      border-radius: 0
+      &:hover
+        text-decoration: none
+        cursor: pointer
+        border-bottom: 2px solid $yellow
+    a.nav-link.active
+      background: transparent
+      text-decoration: none
+      border-bottom: 2px solid $yellow
+
+ul.social
+  margin: 0
+  padding: 0
+  text-align: center
+  li
+    float: left
+
+    list-style: none
+
+ul.horizontal-list
+  margin: 0
+  padding: 0
+  li
+    color: $yellow
+    margin-left: 25px
+    float: left
+    &:first-child
+      margin: 0
+      list-style: none
+    span
+      color: #000000
+table,tr,td
+  border-top: 1px solid black
+.order-shirts
+  border-left: 10px solid #ececec
+table.contact-list td
+  padding: 7px 8px
+.menu-category
+  border-radius: 0
+  img
+    padding: 8px
+  h5
+    font-size: 14px
+    text-align: center
+.menu-item
+  border-radius: 0
+  img
+    padding: 8px
+  h5
+    font-size: 14px
+  span
+    font-size: 8px
+    color: #817f7d
+  p.description
+    font-size: 12px
+    display: none
+  &:hover
+    cursor: pointer
+    z-index: 2
+    position: absolute
+    p.description
+      display: block
+  .card-footer
+    overflow: hidden
+    border-radius: 0
+    padding: 0 !important
+    .row
+      margin: 0
+      .col-md-4
+        padding: 0
+      .col-md-6
+        padding: 0
+    .btn
+      border-radius: 0
+.row.order
+  input
+    border-radius: 0
+  textarea
+    border-radius: 0
+  .btn
+    width: 100%
+    border-radius: 0
+  .total
+    width: 100%
+    height: auto
+    .form-control
+      height: 100%
+      width: 100%
+      border-radius: 0
+      background-color: #ececec
+.basket-item
+  h4
+    font-size: 12px
+hr.paymentHr
+  border: 1px dashed #e4e4e4
+  width: 95%
+  float: right
+#galleryModal.modal.show .modal-dialog
+    .modal-content
+      border-radius: 0
+#modalPayment .modal-body .item .custom-control-label
+  &:hover
+    cursor: pointer
+#changeShop .modal-body .item .custom-control-label
+  &:hover
+    cursor: pointer
+.top-goods
+  .carousel-caption
+    right: 0
+    left: 0
+    top: 20px
+    bottom: 0
+    .container
+      height: 100%
+      .row
+        height: 100%
+    .btn
+      float: right
+p.lead
+  font-family: Europe
+  color:  #141515
+  font-size: 16px
+  font-weight: 400
+  text-align: justify
+h2.title-in
+  font-family: RuSbylyajka
+  color:  #fcc900
+  font-size: 54.57px
+  font-weight: 400
+  text-align: justify
+  transform: scaleY(1.0445)
+.works
+  li
+    font-family: Europe
+    color:  #000102
+    font-size: 13px
+    font-weight: 400
+    text-align: justify
+h4
+  font-family: MullerBold
+  color:  #141515
+  font-size: 30px
+  font-weight: 400
+h5
+  font-family: MullerBold
+  color:  #050809
+  font-size: 24px
+  font-weight: 400
+  line-height: 33px
+.title-image-bg
+  z-index: 2
+  position: absolute
+  margin-top: 45px
+.course
+  .placeholder
+    position: absolute
+    z-index: 2
+    bottom: 0
+    h5
+      font-size: 10px
+      font-family: MullerRegular
+      padding-left: 8px
+      color: #ffffff
+.course .course-img
+	position: relative
+	display: block
+	margin-bottom: 20px
+	overflow: hidden
+
+.course .course-img
+  img
+	   width: 100%
+.course-img:after
+	content: ""
+	position: absolute
+	left: 0
+	right: 0
+	bottom: 0
+	top: 0
+	background-color: $yellow
+	opacity: 0
+	-webkit-transition: 0.2s opacity
+	transition: 0.2s opacity
+.course .course-img:hover:after
+	opacity: 0.7
+.course .course-img .course-link-icon
+	position: absolute
+  cursor: pointer
+	left: 50%
+	top: 50%
+	-webkit-transform: translate(-50% , calc(-50% - 15px))
+  -ms-transform: translate(-50% , calc(-50% - 15px))
+  transform: translate(-50% , calc(-50% - 15px))
+	line-height: 40px
+	text-align: center
+	color: #fff
+	opacity: 0
+	z-index: 10
+	-webkit-transition: 0.2s all
+	transition: 0.2s all
+.course-link-icon h5
+    color: #ffffff
+    font-family: MullerBold
+.course .course-img:hover .course-link-icon
+	-webkit-transform: translate(-50% , -50%)
+  -ms-transform: translate(-50% , -50%)
+  transform: translate(-50% , -50%)
+	opacity: 1
+.course .course-title
+	display: block
+	height: 42px
+.course .course-details
+	margin-top: 20px
+	padding-top: 10px
+.course .course-details .course-price
+	float: right
+.course .course-details .course-price.course-free
+	color: green
+.course .course-details .course-price.course-premium
+	color: #FF6700
+.about-video
+	position: relative
+	display: block
+	border-radius: 4px
+	overflow: hidden
+a.about-video
+  color: #000
+.about-video
+  img
+	   width: 100%
+.about-video .play-icon
+	position: absolute
+	top: 50%
+	left: 50%
+	-webkit-transform: translate(-50% , -50%)
+	    -ms-transform: translate(-50% , -50%)
+	        transform: translate(-50% , -50%)
+	width: 80px
+	height: 80px
+	line-height: 80px
+	text-align: center
+	background: #fff
+	border-radius: 50%
+	font-size: 24.027px
+	z-index: 10
+  color: #000000
+	-webkit-animation : 2s play-animation infinite
+	        animation : 2s play-animation infinite
+	-webkit-transition: 0.2s color
+	transition: 0.2s color
+.about-video:hover .play-icon
+	color: #FF6700
+@-webkit-keyframes play-animation
+	from
+		-webkit-box-shadow : 0px 0px 0px 0px #FFF
+		        box-shadow : 0px 0px 0px 0px #FFF
+	to
+		-webkit-box-shadow : 0px 0px 0px 10px transparent
+		        box-shadow : 0px 0px 0px 10px transparent
+
+@keyframes play-animation
+	from
+		-webkit-box-shadow : 0px 0px 0px 0px #FFF
+		        box-shadow : 0px 0px 0px 0px #FFF
+	to
+		-webkit-box-shadow : 0px 0px 0px 10px transparent
+		        box-shadow : 0px 0px 0px 10px transparent
+
+.about-video:after
+	content: ""
+	position: absolute
+	left: 0
+	right: 0
+	bottom: 0
+	top: 0
